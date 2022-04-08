@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "production",
+    "type": "java.lang.String",
+    "description": "A description for 'production'"
+  },
+  {
+    "name": "charging",
+    "type": "java.lang.String",
+    "description": "A description for 'charging'"
+  },
+  {
+    "name": "token",
+    "type": "java.lang.String",
+    "description": "A description for 'token'"
+  }
+]}

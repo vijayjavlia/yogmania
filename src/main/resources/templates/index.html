@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="header-fragement :: html-head" />
+
+<body class="d-flex min-vh-100 flex-column">
+
+	<div th:replace="header-fragement :: html-navebar"></div>
+
+
+	<div class="body-wrapper flex-grow-1">
+		<section class="slider-big mb-4">
+			<div class="owl-carousel owl-theme">
+				<div class="item">
+					<a href="#"> <img src="images/4.jpg" alt="Slider"
+						class="img-fluid w-100" />
+						<div class="hover-posts">
+							<span><i class="fa fa-play"></i></span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</section>
+		<th:block th:each="category : ${content}">
+			<section class="catslider py-4">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="cat-heading">
+								<h2 th:text="${category.categoryName}">Category Name</h2>
+								<a href="#">More</a>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="owl-carousel owl-theme">
+
+								<div class="item" th:each="vid ,vidsta : ${category.videos}">
+									<a href="#" > <img th:src="${vid.imageUrl}" alt="Slider"
+										class="img-fluid w-100" />
+										
+										<div class="hover-posts">
+											<span><i class="fa fa-play"></i></span>
+										</div>
+										<p th:text="${vidsta.count}"></p>
+									</a>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</th:block>
+	</div>
+
+	<footer th:replace="header-fragement :: html-footer"></footer>
+
+
+
+</body>
+</html>

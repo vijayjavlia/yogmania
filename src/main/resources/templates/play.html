@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="header-fragement :: html-head" />
+
+   <style>
+   
+   .videos{
+   
+        height:200px;
+        width:100%;
+   
+   }
+   
+   
+   </style>
+<body class="d-flex min-vh-100 flex-column">
+
+	<div th:replace="header-fragement :: html-navebar"></div>
+    
+    <div class="body-wrapper flex-grow-1">
+        <section class="view-video pb-3">
+        
+          <video class="videos" onclick="this.paused ? this.play() : this.pause();" controls controlsList="nodownload" preload="auto">
+                <source th:src="@{ ${video.videoUrl}}" type="video/mp4">
+          </video> 
+          
+            <div class="container py-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="video-details d-md-flex mb-2">
+                            <h4 class="flex-grow-1 text-white text-uppercase"  >Video Title Here </h4>
+                            <div class="likebtn">
+                                <button class="btn btn-light text-uppercase py-1 px-3"><small><i class="fas fa-thumbs-up"></i> &nbsp; <span>Like</span> <span class="likes">20</span></small></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="video-details text-white">
+                                    <p><span class="text-warning text-uppercase font-weight-bold"><i class="fa fa-info-circle"></i> Description:</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores a vitae consequatur animi id cumque sed, nulla commodi, nihil, ratione iure esse quis reiciendis facilis non porro ea explicabo saepe. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dignissimos eveniet, quas provident asperiores architecto quo blanditiis. Doloribus cupiditate, fugiat rerum quis saepe sed, odio sequi placeat laboriosam dolor sit.</p>
+                                    <p><span class="text-warning text-uppercase font-weight-bold"><i class="fa fa-info-circle"></i> Author:</span> Author Name</p>
+                                    <p><span class="text-warning text-uppercase font-weight-bold"><i class="fa fa-info-circle"></i> Category:</span> Category Name</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="catslider py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cat-heading">
+                            <h2>Browse Channels</h2>
+                            <a href="#">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="owl-carousel owl-theme">
+                          
+                          
+                            <div class="item">
+                                <a href="#">
+                                    <img src="images/3.jpg" alt="Slider" class="img-fluid w-100" />
+                                    <div class="hover-posts">
+                                        <span><i class="fa fa-play"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+	<footer th:replace="header-fragement :: html-footer"></footer>
+        
+</body>
+</html>
